@@ -1,4 +1,4 @@
-export const delay = (() => {
+const delay = (() => {
 	var timeout = 0;
 
 	return (callback, ms) => {
@@ -7,7 +7,7 @@ export const delay = (() => {
 	};
 })();
 
-export const findParent = {
+const findParent = {
 	by(el, func) {
 		if (!el || func === undefined || el === document) return undefined;
 
@@ -28,4 +28,9 @@ export const findParent = {
 			node.dataset.hasOwnProperty(attrName);
 		});
 	}
+};
+
+module.exports = {
+	delay,
+	findParent
 };
