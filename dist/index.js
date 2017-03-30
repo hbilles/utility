@@ -1,14 +1,16 @@
-const delay = (() => {
+"use strict";
+
+var delay = function () {
 	var timeout = 0;
 
-	return (callback, ms) => {
+	return function (callback, ms) {
 		clearTimeout(timeout);
 		timeout = setTimeout(callback, ms);
 	};
-})();
+}();
 
-const findParent = {
-	by(el, func) {
+var findParent = {
+	by: function by(el, func) {
 		if (!el || func === undefined || el === document) return undefined;
 
 		// if el matches according to function func, return el
@@ -16,21 +18,19 @@ const findParent = {
 
 		return this.by(el.parentNode, func);
 	},
-
-	withClass(el, className) {
-		return this.by(el, node => {
+	withClass: function withClass(el, className) {
+		return this.by(el, function (node) {
 			return node.classList.contains(className);
 		});
 	},
-
-	withData(el, attrName) {
-		return this.by(el, node => {
+	withData: function withData(el, attrName) {
+		return this.by(el, function (node) {
 			node.dataset.hasOwnProperty(attrName);
 		});
 	}
 };
 
 module.exports = {
-	delay,
-	findParent
+	delay: delay,
+	findParent: findParent
 };
