@@ -1,0 +1,19 @@
+{
+  "name": "utility",
+  "version": "1.0.0",
+  "description": "Utility & helper functions for JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hbilles/utility.git"
+  },
+  "author": "Hite Billes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hbilles/utility/issues"
+  },
+  "homepage": "https://github.com/hbilles/utility#readme"
+}
